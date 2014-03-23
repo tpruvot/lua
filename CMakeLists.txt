@@ -137,8 +137,8 @@ endif ()
 add_executable ( lua ${SRC_LUA} src/lua.rc )
 target_link_libraries ( lua liblua )
 
-add_executable ( luac ${SRC_LUAC} src/luac.rc )
-target_link_libraries ( luac liblua )
+add_executable ( luac ${SRC_CORE} ${SRC_LIB} ${SRC_LUAC} src/luac.rc )
+target_link_libraries ( luac ${LIBS} )
 
 # On windows a variant of the lua interpreter without console output needs to be built
 if ( LUA_BUILD_WLUA )
